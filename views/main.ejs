@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Jae Yeong's Main</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="/script/main.js"></script>
+    <script src="/ui/deco.js"></script>
+    
+    <!-- <script src="/src/ui/deco.js"></script> -->
+    <style>
+        body {
+            background-color: skyblue;
+        }
+        html, div {
+            display: table;
+            margin: 100px auto;
+        }
+
+        input[type="button"]{
+            font-size : 20px;
+            padding : 10 30px;
+            margin : 10px;
+
+        }
+
+        input[type="button"]:hover{
+            background-color: rgb(160, 160, 160);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>메인 페이지</h1>
+    <div>
+        <% if(user.permission.includes('write')){ %>
+            <input type="button" value="등록" id="btn_register">
+        <% } %>
+        <input type="button" value="목록" id="btn_list">
+    </div>
+    <h3> 가입된 아이디</h3>
+    <div id = "result">
+    </div>
+
+    <input type="text" value="<%= user.id %>" id="input_user_id" hidden="true">
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Jae Yeong's Register</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script/userList.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid #444444;
+            border-collapse: collapse;
+
+        }
+        th {
+            background-color: rgb(202, 185, 185);
+        }
+        th, td {
+            border: 1px solid #444444;
+            padding: 10px;
+            text-align: center;
+        }
+        html, h1{
+            display: table;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <h1>회원 목록</h1>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>
+                아이디
+            </th>
+            <th>
+                비밀번호
+            </th>
+            <th>
+                권한
+            </th>
+            <th>
+                관리자
+            </th>
+            <th>
+                회사코드
+            </th>
+        </tr>
+        <% 
+            users.forEach((item, index)=>{ %>
+                <tr>
+                    <td>
+                        <%=item.id%>
+                    </td>
+                    <td>
+                        <%=item.password%>
+                    </td>
+                    <td>
+                        <%=(item.permission.length != 0 ? item.permission : '없음')%>
+                    </td>
+                    <td>
+                        <%=(item.admin ? 'O' : 'X')%>
+                    </td>
+                    <td>
+                        <%=item.company_code%>
+                    </td>
+                </tr>
+            <%})
+        %>
+    </table>
+</body>
+</html>

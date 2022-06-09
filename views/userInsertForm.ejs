@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Jae Yeong's Register</title>
+    <script>
+        let responseId = `<%= locals.responseId %>`
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script/userInsertForm.js"></script>
+    <style>
+        html,h1, form , #btn_submit{
+            display: table;
+            margin: auto;
+        }
+
+        #font,input,label,select{
+            margin-bottom : 10px;
+            font-size : 20px;
+        }
+
+        input[type="submit"]{
+            font-size : 20px;
+            padding : 10 30px;
+            margin : 10px;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    
+    <br>
+    <h1>유저 등록</h1>
+    <br>
+    <br>
+    <input type="text" id="result" value="<%= (typeof(result) !== 'undefined' ? result : '') %>" hidden>
+    <form action="/users" method="post" id="form_register">
+        <br id="font">
+            <input type="text" placeholder="Id" name="user_id"  required><br>
+            <input type="password" placeholder="Password" name="user_pw" required><br>
+            <div>
+                
+                <input type="checkbox" value="read" name="user_permission" id="permission_read">
+                <label for = "permission_read">읽기</label>
+                <input type="checkbox" value="write" name="user_permission" id="permission_write">
+                <label for = "permission_write">쓰기</label>
+            </div>
+            <input type="checkbox" value="admin" name="user_admin" id="user_admin">
+            <label for = "user_admin"> admin</label></br>
+            <div>
+                <label>회사 코드</label>
+                <select name="user_company_code" id="user_company_code">
+                    <option value="0">[선택]</option>
+                    <option value="70000">70000</option>
+                    <option value="80000">80000</option>
+                    <option value="90000">90000</option>
+                    
+                </select>
+            </div>
+            <br>
+            <br>
+            <input type="button" value="등록하기" id="btn_submit">
+
+        </div>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "companys":[
+        {
+            "company_code": "70000",
+            "start_date": "2022/04/01",
+            "empire_date": "2022/07/01",
+            "total_count" : "4"
+        },
+        {
+            "company_code": "80000",
+            "start_date": "2022/03/01",
+            "empire_date": "2023/06/01",
+            "total_count" : "4"
+        },
+        {
+            "company_code": "90000",
+            "start_date": "2022/03/01",
+            "empire_date": "2022/04/01",
+            "total_count" : "4"
+        }
+    ]
+}
